@@ -2,26 +2,31 @@
 
 <div>
   <label>Enter length</label> <br />
-  <input />
+  <input (input)="onChangeLength($event)" />
 </div>
 
 <div>
-  <input type="checkbox" />
+  <input (click)="onChangeUseLetters()" type="checkbox" />
   <label>Use Letters</label>
 </div>
 
 <div>
-  <input type="checkbox" />
+  <input (click)="onChangeUseNumbers()" type="checkbox" />
   <label>Use Numbers</label>
 </div>
 
 <div>
-  <input type="checkbox" />
+  <input (click)="onChangeUseSymbols()" type="checkbox" />
   <label>Use Symbols</label>
 </div>
 
 <div>
-  <button (click)="onButtonClick()">Generate</button>
+  <button
+    [disabled]="!(length && (useLetters || useSymbols || useNumbers))"
+    (click)="onGenerateButtonClick()"
+  >
+    Generate
+  </button>
 </div>
 
 <div>
