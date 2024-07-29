@@ -70,6 +70,7 @@ export class AppComponent {
   }
 
   getPassword() {
+    console.log('password-----------------', this.password);
     return this.password;
   }
 }
